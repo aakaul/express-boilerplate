@@ -1,0 +1,94 @@
+<section class="hero is-info is-fullheight">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <h1 class="title">JSFilings</h1>
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              Examples
+            </a>
+            <a class="navbar-item">
+              Documentation
+            </a>
+            <a class="navbar-item">
+              Contact us
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Large title
+      </h1>
+      <h2 class="subtitle">
+        Large subtitle
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class=" hero is-primary section is-fullheight">
+  <div class="container">
+    <h1 class="title">services</h1>
+    {{> cards/services}}
+    {{> cards/services}}
+    {{> cards/services}}
+  </div>
+</section>
+<section class=" hero is-success section is-fullheight">
+  <div class="container">
+    <h1 class="title">About us</h1>
+    <h2 class="subtitle">
+      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+    </h2>
+  </div>
+</section>
+<section class="hero is-primary section is-fullheight">
+  <div class="container">
+    <h1 class="title">Section3</h1>
+    <h2 class="subtitle">
+      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+    </h2>
+  </div>
+</section>
+<section class=" hero is-success section is-fullheight">
+  <div class="container">
+    <h1 class="title">Testimonials</h1>
+    {{> cards/testimonial}}
+  </div>
+  </div>
+  </div>
+</section>
+<hr>
+<hr>
+<section>
+  <div class="container">
+    <h1 class="title">Contact US</h1>
+    <div class="columns is-desktop">
+      <div class="column is-two-fifth">
+        {{{img 0 "/images/contactUs.png" "Contact Us"  0 0 0 0 }}}
+      </div>
+      <div class="column is-three-fifth">
+        {{> contactUs}}
+      </div>
+    </div>
+  </div>
+</section>
+<hr>

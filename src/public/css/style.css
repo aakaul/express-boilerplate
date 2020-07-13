@@ -1,0 +1,49 @@
+footer .social {
+    overflow: hidden;
+    text-align: right;
+  }
+  
+  footer .social li {
+    margin: 0px 5px;
+    display: inline-block;
+  }
+  
+  footer .social li a {
+    color: #fff;
+    text-align: center;
+    background-color: #63EAFF;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  
+  footer .social li a:hover {
+    background-color: #00c1e0;
+    color: #fff;
+  }
+
+
+  .gallery {
+    border: 1px solid lightgray;
+    padding: 1rem;
+    display: flex;
+    overflow-x: scroll;
+    scroll-padding: 0 50%;
+    scroll-snap-type: none;
+}
+
+.gallery>.card {
+    scroll-snap-align: center;
+    display: inline-block;
+    border-radius: 3px;
+    margin-right: 3rem;
+    min-width: 20vw;
+    border-style: solid;
+}
