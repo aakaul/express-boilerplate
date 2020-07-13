@@ -20,7 +20,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "express-jwt": "^5.3.1",
+    "express-jwt": "^6.0.0",
     "express-mysql-session": "^2.1.4",
     "helmet": "^3.21.2",
     "http-status-codes": "^1.4.0",
