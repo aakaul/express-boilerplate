@@ -22,7 +22,7 @@ export class Token {
     }
 
 
-    private getTokenSigningOptions(): jwt.SignOptions {
-        return { expiresIn: config.tokenExpiry };
-    }
+    private getTokenSigningOptions(exp?: string | number): jwt.SignOptions {
+		return { expiresIn: exp || config.tokenExpiry };
+	}
 }
