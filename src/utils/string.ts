@@ -8,6 +8,9 @@ export default class StringUtil {
 		}
 		return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 	}
+    static endWithAny(conds: string[], s: string) {
+		return conds.some((x) => s.endsWith(x));
+	}
 	static randomStringGenerator(length?: number) {
 		if (!length) length = 6;
 		return [...Array(length)].map(() => Math.random().toString(36)[2]).join("");
