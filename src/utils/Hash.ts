@@ -1,6 +1,7 @@
 import { Md5 } from 'md5-typescript';
 import bcrypt  from "bcryptjs"
 import config from "config"
+import { v4 } from "uuid";
 
 const saltRounds = config.get<number>("saltRounds");
 export class Hash {
@@ -45,6 +46,10 @@ export class Hash {
             hash = hash < 0 ? hash*-1 : hash;
           return (hash+"");
     }
+
+    static uuid() {
+		return v4();
+	}
 
 }
 
