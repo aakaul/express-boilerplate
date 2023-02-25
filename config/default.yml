@@ -1,0 +1,34 @@
+PORT: 3000
+sessionSecret: "scrt"
+expiry:  15
+NODE_ENV:  "development"
+
+DB:
+  host: "localhost"
+  user: "root"
+  password: ""
+  database: "tools"
+  port: "3306"
+  synchronize: true
+  logging: true
+
+email:
+  service: "gmail"
+  user: "test@test.com"
+  pass: "your pass"
+
+env: "local"
+ROOT: "http://localhost:5001/"
+
+swagger: 
+  hostname: "localhost:4000"
+
+token: 
+  sessionSecret: "scrt"
+  expiry: "10y"
+
+saltSecret: "saltScrt"
+
+saltRounds: 10
+
+baseRootPath: "${:path}/src/storage"

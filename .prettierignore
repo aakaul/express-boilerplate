@@ -1,0 +1,9 @@
+build
+dist
+src/public/
+src/utils/sms.ts
+
+*.hbs
+*.min.css
+*.min.js
+*.min.ts

@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"emitDecoratorMetadata": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"module": "commonjs",
+		"outDir": "dist",
+		"removeComments": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"strict": false,
+		"target": "es2019",
+		"moduleResolution": "node",
+		"strictPropertyInitialization": false,
+		"paths": {},
+		"types": ["node","long","jest"],
+		"typeRoots": ["node_modules/@types","./src/customeTypes"]
+	},
+	"include": ["src/**/*.ts", "src/.env.ts"],
+	"exclude": ["src/public/","src/storage/","templates"]
+}
