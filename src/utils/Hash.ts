@@ -3,7 +3,6 @@ import bcrypt  from "bcryptjs"
 import config from "config"
 
 const saltRounds = config.get<number>("saltRounds");
-// const saltSecret = config.get<number>("saltSecret");
 export class Hash {
 
     static md5(str: string){
@@ -12,7 +11,7 @@ export class Hash {
 
     static generateKey (length=10, set: 'ALL' | 'NUM' | 'ALPHA' | 'CAPS' | 'SAFE' = 'ALL' ){
       let characters= CharSets[set]
-      
+
       var charactersLength = characters.length-1;
       var randomString = '';
       for (let i = 0; i < length; i++) {
@@ -27,7 +26,7 @@ export class Hash {
 
     static compareBcryptHash(s:string,hash:string){
         return bcrypt.compare(s,hash)
-    } 
+    }
 
     static bcyrptSalt(){
       return bcrypt.genSalt(10)
@@ -45,7 +44,8 @@ export class Hash {
             }
             hash = hash < 0 ? hash*-1 : hash;
           return (hash+"");
-    }    
+    }
+
 }
 
 

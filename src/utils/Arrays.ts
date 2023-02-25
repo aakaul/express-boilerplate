@@ -39,4 +39,20 @@ export class ArrayUtils {
     }
 
 
+    static createArrayChunks(array: any[], chunkSize: number) {
+		return [].concat.apply(
+			[],
+			array.map(function (elem, i) {
+				return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
+			})
+		);
+	}
+
+    static arrToCsv(stringArray: string[]): string {
+		if (!stringArray.length) {
+			return "";
+		}
+		const formattedString = stringArray.join(", ");
+		return formattedString;
+	}
 }

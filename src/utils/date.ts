@@ -80,6 +80,28 @@ export default class DateUtil {
       }
 
 
+	static getQuarters() {
+		const quarters = new Array<string>();
+		const day = new Date();
+		let year = day.getFullYear();
+		const month = day.getMonth();
+		let quarter = Math.floor(month / 3) + 1;
+		for (let i = 0; i < 8; i++) {
+			quarters.push(year + " Q" + quarter);
+			if (i < 8) {
+				quarter--;
+			}
+			if (quarter === 0) {
+				quarter = 4;
+				year--;
+			}
+		}
+		quarters.push("View All Quarters");
+		return quarters;
+	}
+
+
+
 }
 
 

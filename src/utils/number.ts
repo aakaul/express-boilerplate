@@ -67,5 +67,33 @@ export default class NumberUtil {
 		to: (entityValue: number) =>  parseInt(String(Constants.getLastStampToday(entityValue)/1000),10)||null,
 		from: (databaseValue: string): number => parseInt(databaseValue, 10) * 1000 || null
 	}
+
+	static isNumeric = (num: any) =>
+	(typeof num === "number" || (typeof num === "string" && num.trim() !== "")) && !isNaN(num as number);
 	
+
+
+	static fixAllNumbers(data) {
+		for (var key in data) {
+			if (data.hasOwnProperty(key)) {
+				if (data[key] !== null && typeof data[key] === "object") {
+					data[key] = this.fixAllNumbers(data[key]);
+				} else {
+					let value = data[key];
+					if (typeof value == "number") {
+						if (value % 1 != 0) {
+							data[key] = +value.toFixed(2);
+						}
+					} else if (this.isNumeric(value)) {
+						if (value.includes(".")) {
+							data[key] = (+value).toFixed(2);
+						} else {
+							data[key] = +value;
+						}
+					}
+				}
+			}
+		}
+		return data;
+	}
 }
