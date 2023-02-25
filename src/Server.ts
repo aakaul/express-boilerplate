@@ -18,6 +18,10 @@ import { AuthMiddleware } from "./middlewares/auth";
 import morgan, { token } from "morgan";
 const MySQLStore = require("express-mysql-session")(session);
 import chalk from "chalk";
+import { urlencoded } from "body-parser";
+import { NodeCacheCustom } from "./utils/nodeCache";
+import { NodeCacheCustomInstance } from "./instances/nodeCache";
+import { RedisInstance } from "./instances/redis";
 const sessionStore = new MySQLStore(config.get("DB"));
 
 useContainer(Container);
@@ -93,6 +97,8 @@ function setUpParsers(app: { use: (...data: any) => any }) {
 	app.use(cookieParser());
 }
 
+/*
+note: for firebase
 const { initializeApp, cert } = require("firebase-admin/app");
 function setupFireBase(app: { use: (...data: any) => any }) {
 	const serviceAccPath = config.get("firebaseServicePath");
@@ -102,6 +108,7 @@ function setupFireBase(app: { use: (...data: any) => any }) {
 		storageBucket,
 	});
 }
+*/
 
 function setUpRender(app: { engine: (...data: any) => any; set: (...data: any) => any }) {
 	app.set("view engine", "hbs");
@@ -121,10 +128,7 @@ function initNodeCache() {
 	NodeCacheCustomInstance.setInstance(new NodeCacheCustom({ stdTTL: 100, checkperiod: 120 }));
 }
 
-import { urlencoded } from "body-parser";
-import { NodeCacheCustom } from "./utils/nodeCache";
-import { NodeCacheCustomInstance } from "./instances/nodeCache";
-import { RedisInstance } from "./instances/redis";
+
 function setUpBodyParser(app) {
 	app.use(urlencoded({ extended: false }));
 }
@@ -174,7 +178,7 @@ async function main() {
 	createServer(app);
 	setUpRender(app);
 	setUpParsers(app);
-	setupFireBase(app);
+	// setupFireBase(app);
 	setUpSwagger(app);
 	setUpCompression(app);
 	initNodeCache();
