@@ -1,5 +1,4 @@
-
-import config from "config"
+import config from "config";
 
 const swaggerDefinition = {
 	info: {
@@ -14,5 +13,5 @@ const swaggerDefinition = {
 export default {
 	swaggerDefinition: swaggerDefinition,
 	explorer: true,
-	apis: ["**/*.ts"],
+	apis: ["**/*.yaml"],
 };
