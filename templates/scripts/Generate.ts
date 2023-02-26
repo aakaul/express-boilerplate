@@ -2,10 +2,9 @@
 import * as inquirer from "inquirer";
 import * as path from "path"
 import fs from "fs-extra";
-import StringUtil  from "../../utils/string";
 import * as replace from "replace-in-file";
 import pluralize from "pluralize";
-
+import StringUtil  from "../../src/utils/string"
 
 const processList = ["All", "Controller", "Model","Router" ,"Service", "Repository","Dto"]
 

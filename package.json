@@ -9,7 +9,7 @@
     "scripts": {
         "start": "node ./dist",
         "devtsc": "NODE_ENV=development && npx tsc-watch --onSuccess \"node ./dist/index.js\"",
-        "g": "npx ts-node  ./src/templates/scripts/Generate.ts",
+        "g": "npx ts-node  ./templates/scripts/Generate.ts",
         "check": "tsc --build tsconfig.prod.json",
         "views-watch": "chokidar \"src/**/*.hbs\" \"src/public/**/*.*\" -c \"rm -R dist/views && cp -R src/views dist/  && rm -R dist/public && cp -R src/public dist/\"",
         "dev": "concurrently \"npm run devtsc\" \"npm run views-watch\"",
