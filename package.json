@@ -47,7 +47,6 @@
         "express-session": "^1.17.2",
         "helmet": "^6.0.1",
         "http-status-code": "^2.1.0",
-        "http2": "^3.3.7",
         "ioredis": "^4.28.5",
         "jsonwebtoken": "^8.5.1",
         "lodash.clonedeep": "^4.5.0",
