@@ -10,7 +10,7 @@ server.main().then(app=>{
     app.listen(port, () => {
         console.info('Express server started on port: ' + port);
     });
-    
+
     InstanceConfig.instance().forEach(x=>{
         Container.get(x)
     })
@@ -20,14 +20,11 @@ server.main().then(app=>{
 
 
 // Todo:
-/* 
-casual
+/*
 docker | docker-compose for mysql redis and all also
 debug (logger middleware)
-redis 
 nginx
-testing example (unit test)
-rabbitmq 
+rabbitmq
 cli generator complete
 db seeder integration
 update readme
