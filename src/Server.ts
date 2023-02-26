@@ -9,7 +9,9 @@ import path from "path";
 import { Action, createExpressServer, RoutingControllersOptions, useContainer, useExpressServer } from "routing-controllers";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
+import { Hash } from "./utils/Hash";
 import { Container } from "typedi";
+import helmet from "helmet";
 import { createConnection } from "typeorm";
 import swaggerOptions from "./config/swagger.config";
 import typeOrmConfig from "./config/typeOrm.config";
@@ -123,7 +125,6 @@ function setUpRender(app: { engine: (...data: any) => any; set: (...data: any) =
 	);
 }
 
-import { Hash } from "./utils/Hash";
 function initNodeCache() {
 	NodeCacheCustomInstance.setInstance(new NodeCacheCustom({ stdTTL: 100, checkperiod: 120 }));
 }
@@ -169,6 +170,7 @@ function setupRedis() {
 async function main() {
 	await createDBConnection();
 	let app = express();
+    app.use(helmet())
 	setUpMorganLogger(app);
 	App.setInstance(app);
 	setUpBodyParser(app);
